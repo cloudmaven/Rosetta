@@ -1,0 +1,5 @@
+{"vcpus": 1,"memory": 512,"command": ["./master.sh", "1", "testing", "1"]}
+
+#Copy the above JSON to a new .json file.
+
+Command: aws batch submit-job --job-name example1 --job-queue C48XBatchTestQueue  --job-definition C48XBatchTestJobDefinition --container-overrides vcpus=1,memory=512,command="./master.sh","1","bibbles1","1"

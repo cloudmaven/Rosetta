@@ -1,0 +1,35 @@
+{
+  "computeEnvironmentName": "COMPUTE ENVIRONMENT NAME",
+  "type": "MANAGED",
+  "state": "ENABLED",
+  "computeResources": {
+    "minvCpus": 0,
+    "maxvCpus": 2,
+    "desiredvCpus": 0,
+    "instanceTypes": [
+      "c4.large"
+    ],
+    "type": "SPOT",
+    "bidPercentage": 45,
+    "spotIamFleetRole": "arn:aws:iam::AWS_ACCOUNT_NUMBER:role/aws-ec2-spot-fleet-role",
+    "subnets": [
+      "subnet-XXXXXXXX",
+      "subnet-XXXXXXXX", 
+      "subnet-XXXXXXXX",
+      "subnet-XXXXXXXX",
+      "subnet-XXXXXXXX"
+    ],
+    "securityGroupIds": [
+      "sg-XXXXXXXX"
+    ],
+    "ec2KeyPair": "YOUR KEY WITHOUT .pem EXTENSION",
+    "instanceRole": "arn:aws:iam::AWS_ACCOUNT_NUMBER:role/ecsInstanceRole"
+  },
+"serviceRole": "arn:aws:iam::AWS_ACCOUNT_NUMBER:role/service-role/AWSBatchServiceRole"
+}
+
+
+#Copy the above JSON into a new .json file.
+
+
+Command: aws batch create-compute-environment --cli-input-json file://FILEHERE

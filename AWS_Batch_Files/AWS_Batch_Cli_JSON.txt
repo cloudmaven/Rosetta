@@ -1,0 +1,27 @@
+{
+  "computeEnvironmentName": "C48XBatchTest3",
+  "type": "MANAGED",
+  "state": "ENABLED",
+  "computeResources": {
+    "minvCpus": 0,
+    "maxvCpus": 72,
+    "desiredvCpus": 0,
+    "instanceTypes": [
+      "c4.8xlarge"
+    ],
+    "type": "SPOT",
+    "bidPercentage": 45,
+    "spotIamFleetRole": "arn:aws:iam::024986774049:role/aws-ec2-spot-fleet-role",
+    "subnets": [
+      "subnet-848192cd"
+    ],
+    "securityGroupIds": [
+      "sg-a90007d5"
+    ],
+    "ec2KeyPair": "batch-rosetta",
+    "instanceRole": "arn:aws:iam::024986774049:role/ecsInstanceRole"
+  },
+"serviceRole": "arn:aws:iam::024986774049:role/service-role/AWSBatchServiceRole"
+}
+
+aws batch create-compute-environment --cli-input-json file://FILEHERE

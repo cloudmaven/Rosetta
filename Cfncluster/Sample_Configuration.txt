@@ -1,0 +1,31 @@
+[aws]
+aws_region_name = us-west-2
+aws_access_key_id = XXXXXXXXXXXXXXXXXXXXXXXX
+aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXX
+
+
+[global]
+update_check = true
+sanity_check = true
+cluster_template = rosetta_cfn_test
+
+[cluster rosetta_cfn_test]
+vpc_settings = public
+key_name = XXXXXXXXXXXXXXXXXXXXXXXX #(If key is XYZ.pem, just enter XYZ)
+compute_instance_type = YOUR_DESIRED_INSTANCE
+master_instance_type = YOUR_DESIRED_INSTANCE
+initial_queue_size = 2
+max_queue_size = 800
+maintain_initial_size = false
+scheduler = sge
+base_os = ubuntu1604
+custom_ami = ami-ecac2c8c #If you have created a custom AMI, enter it's ID here. Ensure volume size is equal to or more than AMI size.
+master_root_volume_size = 30
+compute_root_volume_size = 30
+cluster_type = spot
+spot_price = YOUR_SPOT_PRICE
+
+[vpc public]
+master_subnet_id = subnet-XXXXXXXX
+compute_subnet_id = subnet-XXXXXXXX #compute_subnet can be the same as master subnet.
+vpc_id = vpc-XXXXXXXX

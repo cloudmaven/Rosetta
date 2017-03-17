@@ -1,0 +1,12 @@
+{
+  "image": "024986774049.dkr.ecr.us-east-1.amazonaws.com/rosetta-batch:batchsemifinal",
+  "vcpus": 1,
+  "memory": 750,
+  "user": "root"
+}
+
+
+#Copy the above JSON into a new .json file.
+
+
+Command: aws batch register-job-definition --job-definition-name BATCH_JOB_DEFINITION_NAME --type container --container-properties file://FILE_CONTAINING_JOB_DEFINITION_JSON.json

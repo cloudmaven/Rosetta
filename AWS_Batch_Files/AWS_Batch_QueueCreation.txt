@@ -1,0 +1,17 @@
+{
+  "jobQueueName": "BatchQueue",
+  "state": "ENABLED",
+  "priority": 1,
+  "computeEnvironmentOrder": [
+    {
+      "order": 1,
+      "computeEnvironment": "BatchComputeEnv"
+    }
+  ]
+}
+
+
+#Copy the above JSON into a new .json file.
+
+
+Command: aws batch create-job-queue --cli-input-json file://FILE
